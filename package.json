@@ -1,3 +1,11 @@
+It looks like there are a couple of issues in your `package.json`. 
+
+1. In the `browserslist` section, you should change the `production` key's value to an array format. 
+2. The `devDependencies` section is missing version numbers for `@babel/plugin-proposal-private-property-in-object`.
+
+Here's a corrected version:
+
+```json
 {
   "name": "carrot-landing",
   "version": "0.1.0",
@@ -24,11 +32,11 @@
     ]
   },
   "browserslist": {
-    "production": {
+    "production": [
       ">0.2%",
       "not dead",
-      "not op_mini all",
-    },
+      "not op_mini all"
+    ],
     "development": [
       "last 1 chrome version",
       "last 1 firefox version",
@@ -36,9 +44,9 @@
     ]
   },
   "devDependencies": {
-    "@babel/plugin-proposal-private-property-in-object",
+    "@babel/plugin-proposal-private-property-in-object": "^7.14.5",
     "autoprefixer": "^10.4.20",
     "postcss": "^8.4.41",
     "tailwindcss": "^3.4.10"
-  },
+  }
 }
